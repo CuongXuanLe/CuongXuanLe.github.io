@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/style/styleTodo.css"> 
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            sm: '480px',
+            md: '768px',
+            lg: '976px',
+            xl: '1440px',
+          },
+          extend: {
+            backgroundImage:{
+              'universe': "url('/assets/img/univers.png')",
+              'footer': "url('/assets/img/footer-bg.png')",
+              'cloudy':"url('/assets/img/cloudy.svg')",
+            },
+            dropShadow: {
+              'custom': '0 1px 1px rgba(29, 29, 29, 0.5)',
+            },
+            colors: {
+              'blur': 'rgba(255,255,255, 0.05)',
+              'transparent': 'rgba(255,255,255, 0)',
+            },
+          },
+        }
+      }
+    </script>
+</head>
+<body>
+    <div className="relative bg-universe bg-cover bg-center bg-no-repeat">
+        <div class="z-50 px-2 sm:px-4 min-[320px]:px-4 py-2.5">
+          <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <a href="/WelcomePage.html" class="flex items-center">
+              <span class="text-4xl md:text-2xl sm:text-xl min-[320px]:text-xl font-bold uppercase">
+                Logo
+              </span>
+            </a>
+            <div class="flex md:order-2 space-x-3">
+              <p class="font-semibold text-lg my-auto">Already playing with us?</p>
+              <a href="/Login.html">
+                <button
+                  class="text-white font-semibold hover:translate-y-1 
+                  tracking-wide bg-indigo-600 hover:text-indigo-600 hover:bg-white focus:ring-4 
+                  focus:outline-none focus:ring-blue-300 rounded-lg text-md px-5 
+                  py-3 text-center mr-3 md:mr-0"
+                  >
+                  Login
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <section class="relative h-screen flex justify-center items-center">
+          <div class="px-6 h-auto max-w-lg md:min-w-sm mx-5 py-6 text-white bg-blur rounded-lg">
+            <div class="flex justify-center items-center flex-wrap h-full g-6">
+              <div class="mb-12 md:mb-0 sm:mb-0 sx:mb-0 ">
+                <form>
+                  <div class="text-3xl font-bold text-center justify-center mb-2">
+                      Let's go
+                  </div>
+                  <div class="mb-2 flex flex-row justify-between">
+                      <div class="w-48 mr-2">
+                          <label>First name</label>
+                          <div class="flex items-center grow bg-blur rounded-lg px-3 mt-2">
+                              <input
+                              type="text"
+                              class="form-control block w-full py-2 text-md font-normal text-white bg-transparent m-0 "
+                              id="loginPassword"
+                              placeholder="E.g: Cuong"
+                              maxLength={36}
+                              />                        
+                          </div>
+                      </div>
+                      <div class="w-48">
+                          <label>Last name</label>
+                          <div class="flex items-center grow bg-blur rounded-lg px-3 mt-2">
+                              <input
+                              type="text"
+                              class="form-control block w-full py-2 text-md font-normal text-white bg-transparent m-0 "
+                              id="loginPassword"
+                              placeholder="E.g: Lee"
+                              maxLength={36}
+                              />                        
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mb-2">
+                      <label>Email</label>
+                      <div class="flex items-center grow bg-blur rounded-lg px-3 mt-2">
+                        <i class="far fa-envelope text-xl"></i>
+                        <input
+                        type="email"
+                        class="form-control block w-full px-4 py-2 text-md font-normal text-white bg-transparent m-0 "
+                        id="loginPassword"
+                        placeholder="Enter your email"
+                        maxLength={36}
+                        />                        
+                      </div>
+                  </div>
+  
+                  <div class="mb-2">
+                      <label>Password</label>
+                      <div class="flex items-center bg-blur rounded-lg px-3 mt-2">
+                        <i class="fas fa-lock"></i>
+                        <input
+                        type="password"
+                        class="flex form-control w-auto px-4 py-2 text-md font-normal text-white bg-transparent m-0 "
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        maxLength={36}
+                        />
+                      </div>
+                  </div>
+  
+                  <a href="/Login.html">
+                    <div class="text-center">
+                        <button
+                        class="px-7 mt-4 py-3 w-full bg-blue-600 text-white text-md font-bold leading-snug rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                        >
+                        Join with us!
+                        </button>
+                    </div>
+                </a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- <Footer />  -->
+      </div>
+</body>
+</html>

@@ -78,7 +78,7 @@ p.danger {
 .banner {
   margin-top: 0;
   padding: 260px 0px 100px 0px;
-  background-image: url("../img/univers.png");
+  background-image: url("/assets/img/univers.png");
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -130,7 +130,7 @@ p.danger {
   width: 96%;
 }
 
-.banner img {
+.banner__img img {
   animation: updown 3s linear infinite;
 }
 @keyframes updown {
@@ -167,10 +167,15 @@ p.danger {
   margin-left: 10px;
 }
 
+.btn__connect-icon {
+  font-size: 1.5rem;
+}
+
 .btn__connect:hover {
   background-color: #fff;
   color: #000;
 }
+
 
 /*Tablet & mobile*/
 @media (min-width: 63.9375em) and (max-width: 80em) {

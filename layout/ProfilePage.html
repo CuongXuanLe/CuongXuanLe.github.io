@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/style/styleTodo.css"> 
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            sm: '480px',
+            md: '768px',
+            lg: '976px',
+            xl: '1440px',
+          },
+          extend: {
+            backgroundImage:{
+              'universe': "url('/assets/img/univers.png')",
+              'footer': "url('/assets/img/footer-bg.png')",
+              'cloudy':"url('/assets/img/cloudy.svg')",
+            },
+            dropShadow: {
+              'custom': '0 1px 1px rgba(29, 29, 29, 0.5)',
+            },
+            colors: {
+              'blur': 'rgba(255,255,255, 0.05)',
+              'transparent': 'rgba(255,255,255, 0)',
+            },
+          },
+        }
+      }
+    </script>
+</head>
+<body>
+    <div>
+        <div class="relative py-10">
+          <Link to="/homepage">
+            <button
+              type=""
+              class=" ml-10 flex items-center py-2 justify-center text-slate-100 w-32 h-10 bg-indigo-600 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
+            >
+              <img class="w-5 h-5" src={leftIcon} alt="Back" />
+              <p class="text-2xl font-bold">Back</p>
+            </button>
+          </Link>
+        </div>
+        <div class="relative mt-10 ml-20 justify-between flex px-20">
+          <div class="flex flex-initial flex-col items-center">
+            <p class="text-4xl font-bold mb-5">My Profile</p>
+            <div class="block h-96 w-96 rounded-full overflow-hidden">
+              <img
+                class="h-full w-full object-cover"
+                src="https://images.unsplash.com/photo-1517849845537-4d257902454a"
+                alt="your_image"
+              />
+              <button class="absolute bottom-56 left-80 bg-gray-500 w-20 h-20 px-5 py-4 rounded-full overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+                <img class="w-12 h-12 " src={photo} alt="" />
+              </button>
+            </div>
+            <div class="relative mt-10">
+              <p class="text-3xl font-bold mb-5">Le Xuan Cuong</p>
+            </div>
+            <div class="flex flex-col font-bold">
+              <button class="bg-green-700 w-64 text-xl py-4 flex items-center justify-center mb-4 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" type="">Save changes</button>
+              <button  onClick={()=> setShowExit(true)} class="bg-gray-200 w-64 text-xl py-2 flex items-center justify-center mb-4 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-200 duration-300" type="">
+                  <img class="w-5 mr-2" src={logout} alt="logout" />
+                  <div class="py-2 text-red-600  cursor-pointer">Log out</div>
+              </button>
+              
+            </div>
+          </div>
+          <div class="flex flex-initial flex-col w-1/2">
+              <div class="mb-10 flex flex-row justify-between">
+                  <div class="w-full mr-2">
+                      <label class="text-xl font-bold">First name</label>
+                      <div class="flex items-center grow bg-blur rounded-lg px-3 mt-2">
+                          <input
+                          type="text"
+                          class="form-control w-full block py-4 text-md font-normal text-white bg-transparent m-0 "
+                          id="loginPassword"
+                          placeholder="E.g: Cuong"
+                          maxLength={36}
+                          />                        
+                      </div>
+                  </div>
+                  <div class="w-full">
+                      <label class="text-xl font-bold">Last name</label>
+                      <div class="flex items-center grow bg-blur rounded-lg px-3 mt-2">
+                          <input
+                          type="text"
+                          class="form-control w-full block py-4 text-md font-normal text-white bg-transparent m-0 "
+                          id="loginPassword"
+                          placeholder="E.g: Lee"
+                          maxLength={36}
+                          />                        
+                      </div>
+                  </div>
+              </div>
+              <div class="mb-10">
+                  <label class="text-xl font-bold">Email</label>
+                  <div class="flex items-center grow bg-blur rounded-lg px-3 mt-2">
+                      <img class="w-5 h-5 fill-white" src={LogIcon} alt=""/>
+                      <input
+                      type="email"
+                      class="form-control w-full block w-full px-4 py-4 text-md font-normal text-white bg-transparent m-0 "
+                      id="loginPassword"
+                      placeholder="Enter your email"
+                      maxLength={36}
+                      />                        
+                  </div>
+              </div>
+  
+              <div class="mb-10">
+                  <label class="text-xl font-bold">Change Password</label>
+                  <div class="flex items-center bg-blur rounded-lg px-3 mt-5">
+                      <img class="flex w-5 h-5 fill-white-0" src={lockIcon} alt=""/>
+                      <input
+                      type="password"
+                      class="flex form-control w-full px-4 py-5 text-md font-normal text-white bg-transparent m-0 "
+                      id="loginPassword"
+                      placeholder="Enter current password"
+                      maxLength={36}
+                      />
+                  </div>
+                  <div class="flex items-center bg-blur rounded-lg px-3 mt-5">
+                      <img class="flex w-5 h-5 fill-white-0" src={lockIcon} alt=""/>
+                      <input
+                      type="password"
+                      class="flex form-control w-full px-4 py-5 text-md font-normal text-white bg-transparent m-0 "
+                      id="loginPassword"
+                      placeholder="Enter new password"
+                      maxLength={36}
+                      />
+                  </div>
+                  <div class="flex items-center bg-blur rounded-lg px-3 mt-5">
+                      <img class="flex w-5 h-5 fill-white-0" src={lockIcon} alt=""/>
+                      <input
+                      type="password"
+                      class="flex form-control w-full px-4 py-5 text-md font-normal text-white bg-transparent m-0 "
+                      id="loginPassword"
+                      placeholder="Confirm new password"
+                      maxLength={36}
+                      />
+                  </div>
+              </div>
+          </div>
+        </div>
+        <LogOut onClose={handleExit} visible={showExit} />
+      </div>
+</body>
+</html>

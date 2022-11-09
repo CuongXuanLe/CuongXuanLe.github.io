@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/style/styleTodo.css"> 
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            sm: '480px',
+            md: '768px',
+            lg: '976px',
+            xl: '1440px',
+          },
+          extend: {
+            backgroundImage:{
+              'universe': "url('/assets/img/univers.png')",
+              'footer': "url('/assets/img/footer-bg.png')",
+              'cloudy':"url('/assets/img/cloudy.svg')",
+            },
+            dropShadow: {
+              'custom': '0 1px 1px rgba(29, 29, 29, 0.5)',
+            },
+            colors: {
+              'blur': 'rgba(255,255,255, 0.05)',
+              'transparent': 'rgba(255,255,255, 0)',
+            },
+          },
+        }
+      }
+    </script>
+</head>
+<body>
+    <nav class="fixed w-full z-50 px-2 sm:px-4 min-[320px]:px-4 py-2.5 bg-[#121212] drop-shadow-custom">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+          <a href="/HomePage.html" class="flex items-center">
+            <span class="text-4xl md:text-2xl sm:text-xl min-[320px]:text-xl font-bold uppercase">
+              Logo
+            </span>
+          </a>
+          <div class="flex md:order-2 space-x-3">
+            <div class="bg-blur flex px-2 rounded-lg">
+              <img class="w-5 mr-2" src="/assets/img/search.svg" alt="search" />
+              <input
+                id="search"
+                class=" bg-transparent"
+                placeholder="Searching..."
+              />
+            </div>
+            <div onClick={handleOnClick} class="relative">
+              <button class="block h-9 w-9 rounded-full overflow-hidden">
+                <img
+                  class="h-full w-full object-cover"
+                  src="https://images.unsplash.com/photo-1517849845537-4d257902454a"
+                  alt="your_image"
+                />
+              </button>
+            <!-- <DropDownProfile /> -->
+            </div>
+          </div>
+        </div>
+    </nav>
+    <div class="py-56 bg-cloudy bg-black bg-repeat flex justify-center overflow-hidden">
+        <div class="flex flex-col h-auto w-full items-start top-1/4 px-32 ">
+            <div class="flex justify-center items-center">
+                <p class="text-6xl font-bold text-white">Your space</p>
+                <button class="flex bg-gray-700 px-4 py-2 ml-7 rounded-lg justify-center items-center ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" type="button">
+                    <img class="w-5 mr-2" src='/assets/img/add.svg' alt="create list"/>
+                    <p class="text-xl font-bold">Create new list</p>
+                </button>                    
+            </div>
+            <!-- <NewList onClose={handleCreate} visible={createNewList}/>
+                <List 
+                    nameList={list.nameList}
+                    descList={list.descList}
+                /> -->
+        </div>
+    </div>
+</body>
+</html>

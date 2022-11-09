@@ -3,41 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/layout/assets/style/WelcomePage.css"> 
+    <meta ="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TodoList</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/style/styleTodo.css"> 
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            sm: '480px',
+            md: '768px',
+            lg: '976px',
+            xl: '1440px',
+          },
+          extend: {
+            backgroundImage:{
+              'universe': "url('/assets/img/univers.png')",
+              'footer': "url('/assets/img/footerBg.png')",
+              'cloudy':"url('/assets/img/cloudy.svg')",
+            },
+            dropShadow: {
+              'custom': '0 1px 1px rgba(29, 29, 29, 0.5)',
+            },
+            colors: {
+              'blur': 'rgba(255,255,255, 0.05)',
+              'transparent': 'rgba(255,255,255, 0)',
+            },
+          },
+        }
+      }
+    </script>
 </head>
     <body>
-        <div class="nav__container">
-            
+      <nav class="fixed w-full z-50 px-2 sm:px-4 min-[320px]:px-4 py-2.5  bg-[#121212] drop-shadow-custom">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+          <a href="/WelcomePage.html" class="flex items-center">
+              <span class="text-4xl md:text-2xl sm:text-xl min-[320px]:text-xl font-bold uppercase">
+                  Logo
+              </span>    
+          </a>
+          <a href="/SignUp.html">
+          <div class="flex md:order-2 space-x-3">
+            <button class="text-white font-semibold hover:translate-y-1 
+            tracking-wide bg-indigo-600 hover:bg-indigo-800 focus:ring-4 
+            focus:outline-none focus:ring-blue-300 rounded-lg text-md px-6 
+            py-3 text-center mr-3 md:mr-0">
+            Sign up
+            </button>
+          </a>
+          <a href="/Login.html">
+            <button class="text-white font-semibold hover:translate-y-1 
+            tracking-wide bg-blur hover:bg-white hover:text-black 
+            focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg 
+            text-md px-6 py-3 text-center mr-3 md:mr-0">
+              Login
+            </button>  
+            </a>                      
+          </div>
         </div>
-        <section class="banner" id="home">
-            <div class="align-items-center banner__row">
-              <div class="banner__content">
-                <div>
-                  <span class="tagline">Welcome to my project</span>
-                  <h1>
-                    It's a simple To do List
-                    <br />
-                    <!-- <span class="wrap">{text}</span> -->
-                  </h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                    similique ut nemo doloremque, ea maiores minima, deserunt, nulla
-                    nihil impedit omnis. Necessitatibus nisi ratione dicta, ipsum
-                    explicabo natus et quas.
-                  </p>
-                  <!-- <Link to="/login"> -->
-                    <button class="btn__connect">
-                      Let's started
-                    </button>
-                  <!-- </Link> -->
-                </div>
-              </div>
-              <div class="banner__img">
-                <img src="assets/img/header-img.svg" alt="Header Img" />
+      </nav>
+      <section class="banner" id="home">
+          <div class="align-items-center banner__row">
+            <div class="banner__content">
+              <div>
+                <span class="tagline">Welcome to my project</span>
+                <h1>
+                  It's a simple To do List
+                  <br />
+                  <!-- <span class="wrap">{text}</span> -->
+                </h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+                  similique ut nemo doloremque, ea maiores minima, deserunt, nulla
+                  nihil impedit omnis. Necessitatibus nisi ratione dicta, ipsum
+                  explicabo natus et quas.
+                </p>
+                <button class="btn__connect flex items-center">
+                  Let's started
+                  <i class="btn__connect-icon far fa-arrow-alt-circle-right ml-2"></i>
+                </button>
               </div>
             </div>
-          </section>
+            <div class="banner__img">
+              <img src="assets/img/header-img.svg" alt="Header Img" />
+            </div>
+          </div>
+      </section>
+      <div class="flex flex-row w-full z-50 justify-between py-5 bg-footer bg-cover bg-center bg-no-repeat
+            xl:flex-row xl:px-40 
+            md:px-10 md:flex-row
+            sm:flex-col">
+            <div class="flex flex-col text-center ">                
+                <a href="/WelcomePage.html" class="xl:text-4xl lg:text-3xl md:text-2xl sm:text-4xl font-bold uppercase mb-2">
+                    Logo
+                </a>
+                <p>© 2022 TodoList</p>
+            </div>
+            <div class="flex justify-center space-x-5 sm: mt-4">
+                <a href="https://github.com/CuongXuanLe">
+                  <i class="fab fa-github text-4xl"></i>
+                </a>
+                <a href="https://www.facebook.com/cuongle322002/">
+                  <i class="fab fa-facebook text-4xl"></i>
+                </a>
+                <a href="https://www.instagram.com/lee.c_23/">
+                  <i class="fab fa-instagram text-4xl"></i>
+                </a>
+            </div>
+        </div>
     </body>
 </html>
