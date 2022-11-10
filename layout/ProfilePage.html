@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/assets/style/styleTodo.css"> 
+    <link rel="stylesheet" href="../layout/assets/style/styleTodo.css"> 
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <script>
       tailwind.config = {
@@ -19,9 +19,9 @@
           },
           extend: {
             backgroundImage:{
-              'universe': "url('/assets/img/univers.png')",
-              'footer': "url('/assets/img/footer-bg.png')",
-              'cloudy':"url('/assets/img/cloudy.svg')",
+              'universe': "url('../layout/assets/img/univers.png')",
+              'footer': "url('../layout/assets/img/footer-bg.png')",
+              'cloudy':"url('../layout/assets/img/cloudy.svg')",
             },
             dropShadow: {
               'custom': '0 1px 1px rgba(29, 29, 29, 0.5)',
@@ -38,12 +38,12 @@
 <body>
     <div>
         <div class="relative py-10">
-          <a href="/HomePage.html">
+          <a href="../layout/HomePage.html">
             <button
               type=""
               class=" ml-10 flex items-center py-2 justify-center text-slate-100 w-32 h-10 bg-indigo-600 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
             >
-              <img class="w-5 h-5" src='/assets/img/chevronLeft.svg' alt="Back" />
+              <img class="w-5 h-5" src='../layout/assets/img/chevronLeft.svg' alt="Back" />
               <p class="text-2xl font-bold">Back</p>
             </button>
           </a>
@@ -58,7 +58,7 @@
                 alt="your_image"
               />
               <button class="absolute bottom-56 left-80 bg-gray-500 w-20 h-20 px-5 py-4 rounded-full overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
-                <img class="w-12 h-12 " src='/assets/img/camera.svg' alt="" />
+                <img class="w-12 h-12 " src='../layout/assets/img/camera.svg' alt="" />
               </button>
             </div>
             <div class="relative mt-10">
@@ -67,7 +67,7 @@
             <div class="flex flex-col font-bold">
               <button class="bg-green-700 w-64 text-xl py-4 flex items-center justify-center mb-4 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" type="">Save changes</button>
               <button class="bg-gray-200 w-64 text-xl py-2 flex items-center justify-center mb-4 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-200 duration-300" type="">
-                  <img class="w-5 mr-2" src='/assets/img/logout.svg' alt="logout" />
+                  <img class="w-5 mr-2" src='../layout/assets/img/logout.svg' alt="logout" />
                   <div class="py-2 text-red-600  cursor-pointer">Log out</div>
               </button>
               

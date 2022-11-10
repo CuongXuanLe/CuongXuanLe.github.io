@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/assets/style/styleTodo.css"> 
+    <link rel="stylesheet" href="../layout/assets/style/styleTodo.css"> 
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <script>
       tailwind.config = {
@@ -19,9 +19,9 @@
           },
           extend: {
             backgroundImage:{
-              'universe': "url('/assets/img/univers.png')",
-              'footer': "url('/assets/img/footer-bg.png')",
-              'cloudy':"url('/assets/img/cloudy.svg')",
+              'universe': "url('../layout/assets/img/univers.png')",
+              'footer': "url('../layout/assets/img/footer-bg.png')",
+              'cloudy':"url('../layout/assets/img/cloudy.svg')",
             },
             dropShadow: {
               'custom': '0 1px 1px rgba(29, 29, 29, 0.5)',
@@ -38,14 +38,14 @@
 <body>
     <nav class="fixed w-full z-50 px-2 sm:px-4 min-[320px]:px-4 py-2.5 bg-[#121212] drop-shadow-custom">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="/HomePage.html" class="flex items-center">
+          <a href="../layout/HomePage.html" class="flex items-center">
             <span class="text-4xl md:text-2xl sm:text-xl min-[320px]:text-xl font-bold uppercase">
               Logo
             </span>
           </a>
           <div class="flex md:order-2 space-x-3">
             <div class="bg-blur flex px-2 rounded-lg">
-              <img class="w-5 mr-2" src="/assets/img/search.svg" alt="search" />
+              <img class="w-5 mr-2" src="../layout/assets/img/search.svg" alt="search" />
               <input
                 id="search"
                 class=" bg-transparent"
@@ -60,15 +60,15 @@
                 <li class="block px-4 py-2 mt-2 text-gray-300">
                   User: <span>Le Xuan Cuong</span>
                 </li>
-                <a href="/ProfilePage.html">
+                <a href="../layout/ProfilePage.html">
                   <li class="flex justify-start items-center px-4 py-2 text-gray-300 hover:bg-indigo-500">
-                    <img class="w-4 mr-2" src='/assets/img/user.svg' alt="profile" /> My Profile
+                    <img class="w-4 mr-2" src='../layout/assets/img/user.svg' alt="profile" /> My Profile
                   </li>
                 </a>
                 <hr />
-                <a href="/WelcomePage.html">
+                <a href="../layout/WelcomePage.html">
                   <li class="flex justify-start items-center text-red-600 px-4 py-2 hover:bg-indigo-500">  
-                    <img class="w-5 mr-2" src='/assets/img/logout.svg' alt="logout"/> 
+                    <img class="w-5 mr-2" src='../layout/assets/img/logout.svg' alt="logout"/> 
                     Log out
                   </li>
                 </a>
@@ -82,7 +82,7 @@
             <div class="flex justify-center items-center">
                 <p class="text-6xl font-bold text-white">Your space</p>
                 <button class="flex bg-gray-700 px-4 py-2 ml-7 rounded-lg justify-center items-center ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" type="button">
-                    <img class="w-5 mr-2" src='/assets/img/add.svg' alt="create list"/>
+                    <img class="w-5 mr-2" src='../layout/assets/img/add.svg' alt="create list"/>
                     <p class="text-xl font-bold">Create new list</p>
                 </button>                    
             </div>
@@ -132,20 +132,20 @@
                   </button>
                   <div id="listOpts" class="listOpts absolute right-0 mt-10 w-48 bg-neutral-50 z-10 rounded-lg overflow-hidden border-2 border-gray-500 hidden">
                     <div class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer">
-                        <img class="w-5 mr-2" src='/assets/img/edit.svg' alt="Edit list"/>
+                        <img class="w-5 mr-2" src='../layout/assets/img/edit.svg' alt="Edit list"/>
                         <p class="text-lg text-gray-700">Edit</p>
                     </div>
                     <div class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer">
-                        <img class="w-5 mr-2" src='/assets/img/clone.svg' alt="Duplicate list"/>
+                        <img class="w-5 mr-2" src='../layout/assets/img/clone.svg' alt="Duplicate list"/>
                         <p class="text-lg text-gray-700">Duplicate</p>
                     </div>
                     <div  class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer">
-                        <img class="w-5 mr-2" src='/assets/img/share.svg' alt="Share list"/>
+                        <img class="w-5 mr-2" src='../layout/assets/img/share.svg' alt="Share list"/>
                         <p class="text-lg text-gray-700">Sharing</p>
                     </div>
                     <hr />
                     <div class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer" >
-                        <img class="w-5 mr-2" src='/assets/img/trash.svg' alt="Delete list"/>
+                        <img class="w-5 mr-2" src='../layout/assets/img/trash.svg' alt="Delete list"/>
                         <p class="text-lg text-red-600">Delete</p>
                     </div>
                     
@@ -156,7 +156,7 @@
                 <div class="flex">
                   <p class="text-xl text-gray-700 text-justify bg-white/90 px-5 py-2 rounded-t-lg border-b-2 border-gray-400">To Do</p>
                   <button class="flex items-center py-2 px-4 ml-5 mb-2 rounded-lg  hover:rounded-lg  ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
-                      <img class="w-5 mr-2" src='/assets/img/addTask.svg' alt="add new task"/>
+                      <img class="w-5 mr-2" src='../layout/assets/img/addTask.svg' alt="add new task"/>
                       <p class="text-xl  font-bold ">New task</p>
                   </button>
                 </div>
@@ -171,16 +171,16 @@
                         </div>
                         <div class="flex justify-evenly w-36">
                             <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"type="">
-                                <img class="w-5" src='/assets/img/edit.svg' alt="Edit task"/>
+                                <img class="w-5" src='../layout/assets/img/edit.svg' alt="Edit task"/>
                             </button>
                             <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
-                                <img class="w-5" src='/assets/img/clone.svg' alt="Duplicate task"/>            
+                                <img class="w-5" src='../layout/assets/img/clone.svg' alt="Duplicate task"/>            
                             </button>
                             <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
-                                <img class="w-5" src='/assets/img/trash.svg' alt="Delete task"/>
+                                <img class="w-5" src='../layout/assets/img/trash.svg' alt="Delete task"/>
                             </button>
                             <button type="" class="hover:cursor-move">
-                                <img class="w-2" src='/assets/img/move.svg' alt="Move task"/>
+                                <img class="w-2" src='../layout/assets/img/move.svg' alt="Move task"/>
                             </button>
                         </div>
                       </div>
@@ -192,16 +192,16 @@
                         </div>
                         <div class="flex justify-evenly w-36">
                             <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"type="">
-                                <img class="w-5" src='/assets/img/edit.svg' alt="Edit task"/>
+                                <img class="w-5" src='../layout/assets/img/edit.svg' alt="Edit task"/>
                             </button>
                             <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
-                                <img class="w-5" src='/assets/img/clone.svg' alt="Duplicate task"/>            
+                                <img class="w-5" src='../layout/assets/img/clone.svg' alt="Duplicate task"/>            
                             </button>
                             <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
-                                <img class="w-5" src='/assets/img/trash.svg' alt="Delete task"/>
+                                <img class="w-5" src='../layout/assets/img/trash.svg' alt="Delete task"/>
                             </button>
                             <button type="" class="hover:cursor-move">
-                                <img class="w-2" src='/assets/img/move.svg' alt="Move task"/>
+                                <img class="w-2" src='../layout/assets/img/move.svg' alt="Move task"/>
                             </button>
                         </div>
                       </div>
