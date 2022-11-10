@@ -81,17 +81,17 @@
         <div class="flex flex-col h-auto w-full items-start top-1/4 px-32 ">
             <div class="flex justify-center items-center">
                 <p class="text-6xl font-bold text-white">Your space</p>
+                <a href="#create-list">
                 <button class="flex bg-gray-700 px-4 py-2 ml-7 rounded-lg justify-center items-center ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" type="button">
                     <img class="w-5 mr-2" src='../layout/assets/img/add.svg' alt="create list"/>
                     <p class="text-xl font-bold">Create new list</p>
-                </button>                    
-            </div>
-            <!-- create new List form -->
-            <!-- <div
-                id="NewList"
-                onClick={handleOnClose}
-                class="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                </button>        
+              </a>
+              <div
+                id="create-list"
+                class="modal__createList fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
               >
+             
                 <form method="POST" class="max-w-xl bg-slate-800/50 h-60 px-4 rounded-lg">
                   <p class="text-xl font-bold py-5">Create new List</p>
                   <div class="flex items-center space-x-3">
@@ -104,15 +104,18 @@
                     <input
                       type="text"
                       placeholder="Enter description"
-                      class="px-2 py-2 text-lg pt-1 capitalize rounded-lg bg-gray-700"
+                      class="px-2 py-2 text-lg capitalize rounded-lg bg-gray-700"
                     />
                   </div>
                   <div class="flex items-center justify-end mt-8">
-                      <button class="bg-gray-700 hover:bg-slate-600 px-5 py-2 text-lg rounded-lg " onClick={onClose}>Cancel</button>
+                      <a href="#" class="bg-gray-700 hover:bg-slate-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
                       <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Create list</button>
                   </div>
                 </form>
-              </div> -->
+              </div>     
+            </div>
+            <!-- create new List form -->
+            
                 <!-- <List 
                 nameList={list.nameList}
                 descList={list.descList}
@@ -131,35 +134,163 @@
                       <img class="w-10" src="../layout/assets/img/moreOpts.svg" alt="Options" />
                   </button>
                   <div id="listOpts" class="listOpts absolute right-0 mt-10 w-48 bg-neutral-50 z-10 rounded-lg overflow-hidden border-2 border-gray-500 hidden">
-                    <div class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer">
-                        <img class="w-5 mr-2" src='../layout/assets/img/edit.svg' alt="Edit list"/>
-                        <p class="text-lg text-gray-700">Edit</p>
+                    <a href="#editList">
+                      <div class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer">
+                          <img class="w-5 mr-2" src='../layout/assets/img/edit.svg' alt="Edit list"/>
+                          <p class="text-lg text-gray-700">Edit</p>
+                      </div>
+                    </a>
+                    <div
+                      id="editList"
+                      class="modal__editList fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                    >
+                      <form method="PUT" class="max-w-xl bg-slate-800/50 h-auto py-4 px-4 rounded-lg">
+                        <p class="text-xl font-bold pb-5">Edit List</p>
+                        <div class="flex items-center space-x-3">
+                          <input
+                            type="text"
+                            placeholder="Enter name list"
+                            class="px-2 py-2 text-lg capitalize rounded-lg bg-gray-700"
+                          />
+                          <p class="text-lg">-</p>
+                          <input
+                            type="text"
+                            placeholder="Enter description"
+                            class="px-2 py-2 text-lg pt-1 capitalize rounded-lg bg-gray-700"
+                          />
+                        </div>
+                        <div class="flex items-center justify-end mt-8">
+                            <a href="#" class="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                            <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Confirm edit</button>
+                        </div>
+                      </form>
                     </div>
+                    <a href="#DuplicateList">
                     <div class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer">
                         <img class="w-5 mr-2" src='../layout/assets/img/clone.svg' alt="Duplicate list"/>
                         <p class="text-lg text-gray-700">Duplicate</p>
                     </div>
-                    <div  class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer">
-                        <img class="w-5 mr-2" src='../layout/assets/img/share.svg' alt="Share list"/>
-                        <p class="text-lg text-gray-700">Sharing</p>
+                    </a>
+                    <div
+                      id="DuplicateList"
+                      class="modal__duplicate fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                    >
+                      <form method="POST" class="max-w-xl bg-slate-800/50 h-auto px-6 py-4 rounded-lg">
+                        <p class="text-xl font-bold pb-5">Duplicate List</p>
+                        <div class="flex items-center space-x-3">
+                          <input
+                            type="text"
+                            placeholder="Duplicate list"
+                            class="px-2 py-2 w-full text-lg capitalize rounded-lg bg-gray-700"
+                          />
+                        </div>
+                        <div class="flex items-center justify-end mt-10">
+                            <a href="#" class="bg-gray-700 px-5 py-2 text-lg rounded-lg hover:bg-gray-600">Cancel</a>
+                            <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">
+                              <div class="flex items-center ">
+                                  <img class="w-5 mr-2" src='../layout/assets/img/clone.svg' alt="Duplicate list"/>
+                                  <p class="text-lg ">Duplicate</p>
+                              </div>
+                            </button>
+                        </div>
+                      </form>
+                    </div>
+                    <a href="#ShareList">
+                      <div  class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer">
+                          <img class="w-5 mr-2" src='../layout/assets/img/share.svg' alt="Share list"/>
+                          <p class="text-lg text-gray-700">Sharing</p>
+                      </div>
+                    </a>
+                    <div
+                      id="ShareList"
+                      class="modal__shareList fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                    >
+                      <form method="PUT" class="max-w-xl bg-slate-800/50 h-auto py-5 px-4 rounded-lg">
+                        <p class="text-xl font-bold ">Share this List</p>
+                        <p class="text-xl py-3">Sharing <span class="border-b-2 font-bold text-gray-200 border-dashed mx-1"> Shopping List </span> list with all views</p>
+                        <div class="flex items-center my-5">
+                          <input
+                            type="text"
+                            placeholder="Enter name list"
+                            class="px-2 py-2 w-full text-lg rounded-l-lg bg-gray-700"
+                          />
+                          <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 px-5 py-2 text-lg rounded-r-lg ">Invite</button>
+                        </div>
+                          <div>
+                              <p class="font-bold text-xl">User</p>
+                              <div class="flex items-center my-5">
+                                  <p
+                                  class="px-2 py-2 w-56 text-lg rounded-l-lg bg-gray-700 truncate"
+                                  >cuong.le200222@vnuk.edu.vn</p>
+                                  <select type="option" class="bg-gray-700 hover:bg-gray-700 px-2 py-3 text-lg border-0 cursor-pointer">
+                                      <option value="edit">
+                                          <p>Edit</p>
+                                      </option>
+                                      <option value="view">
+                                          <p>View</p>
+                                      </option>
+                                  </select>
+                                  <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 px-5 py-2 text-lg rounded-r-lg ">Invite</button>
+                              </div>
+                          </div>          
+                        <div class="flex items-center justify-end mt-8">
+                            <a href="#" type="button" class="bg-gray-700 hover:bg-gray-600 ml-5 px-5 py-2 text-lg rounded-lg ">Done</a>
+                        </div>
+                      </form>
                     </div>
                     <hr />
-                    <div class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer" >
-                        <img class="w-5 mr-2" src='../layout/assets/img/trash.svg' alt="Delete list"/>
-                        <p class="text-lg text-red-600">Delete</p>
+                    <a href="#deleteList">
+                      <div class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer" >
+                          <img class="w-5 mr-2" src='../layout/assets/img/trash.svg' alt="Delete list"/>
+                          <p class="text-lg text-red-600">Delete</p>
+                      </div>
+                    </a>
+                    <div
+                      id="deleteList"
+                      class="modal__deleteList fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                    >
+                      <form method="DELETE" class="max-w-xl bg-slate-800/50 h-auto py-4 px-8 rounded-lg">
+                        <p class="text-xl font-bold pb-5">Delete List</p>
+                        <div class="flex flex-col items-center space-x-3">
+                          <img class="w-10 mb-5" src='../layout/assets/img/warning.svg' alt="delete"/>
+                          <p>Delete this list ?</p>
+                        </div>
+                        <div class="flex items-center justify-center mt-8">
+                            <a href="#" class="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                            <button type="submit" class="bg-red-700 hover:bg-red-600 ml-5 px-5 py-2 text-lg rounded-lg ">Delete</button>
+                        </div>
+                      </form>
                     </div>
-                    
                 </div>
               </div>
               <!-- {showTask && (<ListTodo />)} -->
               <div id="listContent" class="my-5 hidden">
                 <div class="flex">
                   <p class="text-xl text-gray-700 text-justify bg-white/90 px-5 py-2 rounded-t-lg border-b-2 border-gray-400">To Do</p>
-                  <button class="flex items-center py-2 px-4 ml-5 mb-2 rounded-lg  hover:rounded-lg  ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+                  <a href="#createNewTask" class="flex items-center py-2 px-4 ml-5 mb-2 rounded-lg  hover:rounded-lg  ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
                       <img class="w-5 mr-2" src='../layout/assets/img/addTask.svg' alt="add new task"/>
                       <p class="text-xl  font-bold ">New task</p>
-                  </button>
-                </div>
+                  </a>
+                  <div
+                    id="createNewTask"
+                    class="modal__createTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                  >
+                    <form class="max-w-xl bg-slate-800/50 h-60 px-4 rounded-lg">
+                      <p class="text-xl font-bold py-5">Create new task</p>
+                      <div class="flex items-center space-x-3">
+                        <input
+                          type="text"
+                          placeholder="Enter name list"
+                          class="px-2 py-2 w-full text-lg capitalize rounded-lg bg-gray-700"
+                        />
+                      </div>
+                      <div class="flex items-center justify-end mt-8">
+                          <a href="#" class="bg-gray-700 hover:bg-slate-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                          <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Create task</button>
+                      </div>
+                    </form>
+                    </div>
+                  </div>
                     <!-- <Task 
                         task={tasks.task} 
                     /> -->
@@ -170,15 +301,80 @@
                             <p class="">lmao hu hu hu hu hu hu hu hu hu</p>
                         </div>
                         <div class="flex justify-evenly w-36">
-                            <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"type="">
-                                <img class="w-5" src='../layout/assets/img/edit.svg' alt="Edit task"/>
-                            </button>
+                            <a href="#EditTask" class="my-auto"> 
+                              <button href="#EditTask" class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"type="">
+                                    <img class="w-5" src='../layout/assets/img/edit.svg' alt="Edit task"/>
+                                </button>
+                            </a> 
+                            <div
+                              id="EditTask"
+                              class="modal__editTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="PUT" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto py-4 px-4 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Edit Task</p>
+                                <div class="flex items-center  space-x-3">
+                                  <input
+                                    type="text"
+                                    placeholder="Enter name task"
+                                    class="px-2 py-2 text-lg w-full  rounded-lg bg-gray-700"
+                                  />
+                                </div>
+                                <div class="flex items-center justify-end mt-8">
+                                    <a href="#" class="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                                    <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Confirm edit</button>
+                                </div>
+                              </form>
+                            </div>
+                            <a href="#DuplicateTask" class="my-auto">
                             <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
                                 <img class="w-5" src='../layout/assets/img/clone.svg' alt="Duplicate task"/>            
                             </button>
-                            <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
-                                <img class="w-5" src='../layout/assets/img/trash.svg' alt="Delete task"/>
-                            </button>
+                          </a>
+                            <div
+                              id="DuplicateTask"
+                              class="modal__duplicateTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="POST" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto px-6 py-4 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Duplicate Task</p>
+                                <div class="flex items-center space-x-3">
+                                  <input
+                                    type="text"
+                                    placeholder="Duplicate task"
+                                    class="px-2 py-2 w-full text-lg capitalize rounded-lg bg-gray-700"
+                                  />
+                                </div>
+                                <div class="flex items-center justify-end mt-10">
+                                    <a href="#" class="bg-gray-700 px-5 py-2 text-lg rounded-lg hover:bg-gray-600">Cancel</a>
+                                    <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">
+                                      <div class="flex items-center ">
+                                          <img class="w-5 mr-2" src='../layout/assets/img/clone.svg' alt="Duplicate task"/>
+                                          <p class="text-lg ">Duplicate</p>
+                                      </div>
+                                    </button>
+                                </div>
+                              </form>
+                            </div>
+                            <a href="#deleteTask" class="my-auto">
+                              <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
+                                  <img class="w-5" src='../layout/assets/img/trash.svg' alt="Delete task"/>
+                              </button>
+                            </a>
+                            <div
+                              id="deleteTask"
+                              class="modal__deleteTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="DELETE" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto py-4 px-8 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Task will be permanently deleted</p>
+                                <div class="flex flex-col items-center space-x-3">
+                                  <img class="w-10 mb-5" src='../layout/assets/img/warning.svg' alt="delete"/>
+                                  <p>Delete this task ?</p>
+                                </div>
+                                <div class="flex items-center justify-center mt-8">
+                                    <a href="#" class="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                                    <button type="submit" class="bg-red-700 hover:bg-red-600 ml-5 px-5 py-2 text-lg rounded-lg ">Delete</button>
+                                </div>
+                              </form>
+                            </div>
                             <button type="" class="hover:cursor-move">
                                 <img class="w-2" src='../layout/assets/img/move.svg' alt="Move task"/>
                             </button>
@@ -188,18 +384,255 @@
                       <div class="w-full text-gray-900 justify-between items-center text-xl p-3 bg-gray-400/20 flex">
                         <div class="flex">
                             <input type="checkbox" class="w-5 h-5 mr-2 checked:bg-blue-500 cursor-pointer" />
-                            <p class="">lmao hu hu hu hu hu hu hu hu hu</p>
+                            <p class="">super hu hu hu hu hu hu hu hu hu</p>
                         </div>
                         <div class="flex justify-evenly w-36">
-                            <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"type="">
-                                <img class="w-5" src='../layout/assets/img/edit.svg' alt="Edit task"/>
-                            </button>
+                            <a href="#EditTask" class="my-auto"> 
+                              <button href="#EditTask" class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"type="">
+                                    <img class="w-5" src='../layout/assets/img/edit.svg' alt="Edit task"/>
+                                </button>
+                            </a> 
+                            <div
+                              id="EditTask"
+                              class="modal__editTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="PUT" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto py-4 px-4 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Edit Task</p>
+                                <div class="flex items-center  space-x-3">
+                                  <input
+                                    type="text"
+                                    placeholder="Enter name task"
+                                    class="px-2 py-2 text-lg w-full  rounded-lg bg-gray-700"
+                                  />
+                                </div>
+                                <div class="flex items-center justify-end mt-8">
+                                    <a href="#" class="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                                    <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Confirm edit</button>
+                                </div>
+                              </form>
+                            </div>
+                            <a href="#DuplicateTask" class="my-auto">
                             <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
                                 <img class="w-5" src='../layout/assets/img/clone.svg' alt="Duplicate task"/>            
                             </button>
-                            <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
-                                <img class="w-5" src='../layout/assets/img/trash.svg' alt="Delete task"/>
+                          </a>
+                            <div
+                              id="DuplicateTask"
+                              class="modal__duplicateTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="POST" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto px-6 py-4 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Duplicate Task</p>
+                                <div class="flex items-center space-x-3">
+                                  <input
+                                    type="text"
+                                    placeholder="Duplicate task"
+                                    class="px-2 py-2 w-full text-lg capitalize rounded-lg bg-gray-700"
+                                  />
+                                </div>
+                                <div class="flex items-center justify-end mt-10">
+                                    <a href="#" class="bg-gray-700 px-5 py-2 text-lg rounded-lg hover:bg-gray-600">Cancel</a>
+                                    <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">
+                                      <div class="flex items-center ">
+                                          <img class="w-5 mr-2" src='../layout/assets/img/clone.svg' alt="Duplicate task"/>
+                                          <p class="text-lg ">Duplicate</p>
+                                      </div>
+                                    </button>
+                                </div>
+                              </form>
+                            </div>
+                            <a href="#deleteTask" class="my-auto">
+                              <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
+                                  <img class="w-5" src='../layout/assets/img/trash.svg' alt="Delete task"/>
+                              </button>
+                            </a>
+                            <div
+                              id="deleteTask"
+                              class="modal__deleteTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="DELETE" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto py-4 px-8 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Task will be permanently deleted</p>
+                                <div class="flex flex-col items-center space-x-3">
+                                  <img class="w-10 mb-5" src='../layout/assets/img/warning.svg' alt="delete"/>
+                                  <p>Delete this task ?</p>
+                                </div>
+                                <div class="flex items-center justify-center mt-8">
+                                    <a href="#" class="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                                    <button type="submit" class="bg-red-700 hover:bg-red-600 ml-5 px-5 py-2 text-lg rounded-lg ">Delete</button>
+                                </div>
+                              </form>
+                            </div>
+                            <button type="" class="hover:cursor-move">
+                                <img class="w-2" src='../layout/assets/img/move.svg' alt="Move task"/>
                             </button>
+                        </div>
+                      </div>
+                      <hr/>
+                      <div class="w-full text-gray-900 justify-between items-center text-xl p-3 bg-gray-400/20 flex">
+                        <div class="flex">
+                            <input type="checkbox" class="w-5 h-5 mr-2 checked:bg-blue-500 cursor-pointer" />
+                            <p class="">mega super hu hu hu hu hu hu hu hu hu</p>
+                        </div>
+                        <div class="flex justify-evenly w-36">
+                            <a href="#EditTask" class="my-auto"> 
+                              <button href="#EditTask" class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"type="">
+                                    <img class="w-5" src='../layout/assets/img/edit.svg' alt="Edit task"/>
+                                </button>
+                            </a> 
+                            <div
+                              id="EditTask"
+                              class="modal__editTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="PUT" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto py-4 px-4 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Edit Task</p>
+                                <div class="flex items-center  space-x-3">
+                                  <input
+                                    type="text"
+                                    placeholder="Enter name task"
+                                    class="px-2 py-2 text-lg w-full  rounded-lg bg-gray-700"
+                                  />
+                                </div>
+                                <div class="flex items-center justify-end mt-8">
+                                    <a href="#" class="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                                    <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Confirm edit</button>
+                                </div>
+                              </form>
+                            </div>
+                            <a href="#DuplicateTask" class="my-auto">
+                            <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
+                                <img class="w-5" src='../layout/assets/img/clone.svg' alt="Duplicate task"/>            
+                            </button>
+                          </a>
+                            <div
+                              id="DuplicateTask"
+                              class="modal__duplicateTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="POST" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto px-6 py-4 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Duplicate Task</p>
+                                <div class="flex items-center space-x-3">
+                                  <input
+                                    type="text"
+                                    placeholder="Duplicate task"
+                                    class="px-2 py-2 w-full text-lg capitalize rounded-lg bg-gray-700"
+                                  />
+                                </div>
+                                <div class="flex items-center justify-end mt-10">
+                                    <a href="#" class="bg-gray-700 px-5 py-2 text-lg rounded-lg hover:bg-gray-600">Cancel</a>
+                                    <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">
+                                      <div class="flex items-center ">
+                                          <img class="w-5 mr-2" src='../layout/assets/img/clone.svg' alt="Duplicate task"/>
+                                          <p class="text-lg ">Duplicate</p>
+                                      </div>
+                                    </button>
+                                </div>
+                              </form>
+                            </div>
+                            <a href="#deleteTask" class="my-auto">
+                              <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
+                                  <img class="w-5" src='../layout/assets/img/trash.svg' alt="Delete task"/>
+                              </button>
+                            </a>
+                            <div
+                              id="deleteTask"
+                              class="modal__deleteTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="DELETE" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto py-4 px-8 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Task will be permanently deleted</p>
+                                <div class="flex flex-col items-center space-x-3">
+                                  <img class="w-10 mb-5" src='../layout/assets/img/warning.svg' alt="delete"/>
+                                  <p>Delete this task ?</p>
+                                </div>
+                                <div class="flex items-center justify-center mt-8">
+                                    <a href="#" class="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                                    <button type="submit" class="bg-red-700 hover:bg-red-600 ml-5 px-5 py-2 text-lg rounded-lg ">Delete</button>
+                                </div>
+                              </form>
+                            </div>
+                            <button type="" class="hover:cursor-move">
+                                <img class="w-2" src='../layout/assets/img/move.svg' alt="Move task"/>
+                            </button>
+                        </div>
+                      </div>
+                      <hr/>
+                      <div class="w-full text-gray-900 justify-between items-center text-xl p-3 bg-gray-400/20 flex">
+                        <div class="flex">
+                            <input type="checkbox" checked="checked" class="w-5 h-5 mr-2 checked:bg-blue-500 cursor-pointer"/>
+                            <p class="line-through">ultra mega super hu hu hu hu hu hu hu hu hu</p>
+                        </div>
+                        <div class="flex justify-evenly w-36">
+                            <a href="#EditTask" class="my-auto"> 
+                              <button href="#EditTask" class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"type="">
+                                    <img class="w-5" src='../layout/assets/img/edit.svg' alt="Edit task"/>
+                                </button>
+                            </a> 
+                            <div
+                              id="EditTask"
+                              class="modal__editTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="PUT" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto py-4 px-4 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Edit Task</p>
+                                <div class="flex items-center  space-x-3">
+                                  <input
+                                    type="text"
+                                    placeholder="Enter name task"
+                                    class="px-2 py-2 text-lg w-full  rounded-lg bg-gray-700"
+                                  />
+                                </div>
+                                <div class="flex items-center justify-end mt-8">
+                                    <a href="#" class="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                                    <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">Confirm edit</button>
+                                </div>
+                              </form>
+                            </div>
+                            <a href="#DuplicateTask" class="my-auto">
+                            <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
+                                <img class="w-5" src='../layout/assets/img/clone.svg' alt="Duplicate task"/>            
+                            </button>
+                          </a>
+                            <div
+                              id="DuplicateTask"
+                              class="modal__duplicateTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="POST" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto px-6 py-4 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Duplicate Task</p>
+                                <div class="flex items-center space-x-3">
+                                  <input
+                                    type="text"
+                                    placeholder="Duplicate task"
+                                    class="px-2 py-2 w-full text-lg capitalize rounded-lg bg-gray-700"
+                                  />
+                                </div>
+                                <div class="flex items-center justify-end mt-10">
+                                    <a href="#" class="bg-gray-700 px-5 py-2 text-lg rounded-lg hover:bg-gray-600">Cancel</a>
+                                    <button type="submit" class="bg-indigo-700 hover:bg-indigo-600 ml-5 px-5 py-2 text-lg rounded-lg ">
+                                      <div class="flex items-center ">
+                                          <img class="w-5 mr-2" src='../layout/assets/img/clone.svg' alt="Duplicate task"/>
+                                          <p class="text-lg ">Duplicate</p>
+                                      </div>
+                                    </button>
+                                </div>
+                              </form>
+                            </div>
+                            <a href="#deleteTask" class="my-auto">
+                              <button class="ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"  type="">
+                                  <img class="w-5" src='../layout/assets/img/trash.svg' alt="Delete task"/>
+                              </button>
+                            </a>
+                            <div
+                              id="deleteTask"
+                              class="modal__deleteTask fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50"
+                            >
+                              <form method="DELETE" class="max-w-xl text-gray-200 bg-slate-800/50 h-auto py-4 px-8 rounded-lg">
+                                <p class="text-xl font-bold pb-5">Task will be permanently deleted</p>
+                                <div class="flex flex-col items-center space-x-3">
+                                  <img class="w-10 mb-5" src='../layout/assets/img/warning.svg' alt="delete"/>
+                                  <p>Delete this task ?</p>
+                                </div>
+                                <div class="flex items-center justify-center mt-8">
+                                    <a href="#" class="bg-gray-700 hover:bg-gray-600 px-5 py-2 text-lg rounded-lg">Cancel</a>
+                                    <button type="submit" class="bg-red-700 hover:bg-red-600 ml-5 px-5 py-2 text-lg rounded-lg ">Delete</button>
+                                </div>
+                              </form>
+                            </div>
                             <button type="" class="hover:cursor-move">
                                 <img class="w-2" src='../layout/assets/img/move.svg' alt="Move task"/>
                             </button>

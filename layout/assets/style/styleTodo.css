@@ -306,6 +306,28 @@ p.danger {
   display: block!important;
 }
 
-.open-list{
-  display: block!important;
+
+.modal__createList,
+.modal__editList,
+.modal__duplicate,
+.modal__shareList,
+.modal__deleteList,
+.modal__createTask,
+.modal__editTask,
+.modal__duplicateTask,
+.modal__deleteTask
+{
+  visibility: hidden;
+}
+
+.modal__createList:target,
+.modal__editList:target,
+.modal__duplicate:target,
+.modal__shareList:target,
+.modal__deleteList:target,
+.modal__createTask:target,
+.modal__editTask:target,
+.modal__duplicateTask:target,
+.modal__deleteTask:target{
+  visibility: visible;
 }
