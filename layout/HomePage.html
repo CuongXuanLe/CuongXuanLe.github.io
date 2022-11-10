@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./assets/style/styleTodo.css"> 
+    <link rel="stylesheet" href="../layout/assets/style/styleTodo.css"> 
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <script>
       tailwind.config = {
@@ -121,14 +121,14 @@
               <div class="flex justify-between relative ">
                   <div class="flex items-center space-x-3 text-black">
                       <button type="button" onClick='toggleListContent()'>
-                          <img class="w-4 h-4" src="assets/img/downList.svg" alt="list" />
+                          <img class="w-4 h-4" src="../layout/assets/img/downList.svg" alt="list" />
                       </button>
                       <p class="text-3xl capitalize">Shopping list</p>
                       <p class="text-2xl">-</p>
                       <p class="text-xl pt-1 capitalize">cook for dinner</p>
                   </div>
                   <button onClick="toggleListOpts()" type="" >
-                      <img class="w-10" src="assets/img/moreOpts.svg" alt="Options" />
+                      <img class="w-10" src="../layout/assets/img/moreOpts.svg" alt="Options" />
                   </button>
                   <div id="listOpts" class="listOpts absolute right-0 mt-10 w-48 bg-neutral-50 z-10 rounded-lg overflow-hidden border-2 border-gray-500 hidden">
                     <div class="flex items-center py-2 px-4 hover:bg-gray-300 cursor-pointer">
