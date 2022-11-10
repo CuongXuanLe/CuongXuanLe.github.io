@@ -300,3 +300,12 @@ p.danger {
     display: none;
   }
 }
+
+
+.open-menu{
+  display: block!important;
+}
+
+.open-list{
+  display: block!important;
+}

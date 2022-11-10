@@ -38,15 +38,15 @@
 <body>
     <div>
         <div class="relative py-10">
-          <Link to="/homepage">
+          <a href="/HomePage.html">
             <button
               type=""
               class=" ml-10 flex items-center py-2 justify-center text-slate-100 w-32 h-10 bg-indigo-600 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
             >
-              <img class="w-5 h-5" src={leftIcon} alt="Back" />
+              <img class="w-5 h-5" src='/assets/img/chevronLeft.svg' alt="Back" />
               <p class="text-2xl font-bold">Back</p>
             </button>
-          </Link>
+          </a>
         </div>
         <div class="relative mt-10 ml-20 justify-between flex px-20">
           <div class="flex flex-initial flex-col items-center">
@@ -58,7 +58,7 @@
                 alt="your_image"
               />
               <button class="absolute bottom-56 left-80 bg-gray-500 w-20 h-20 px-5 py-4 rounded-full overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
-                <img class="w-12 h-12 " src={photo} alt="" />
+                <img class="w-12 h-12 " src='/assets/img/camera.svg' alt="" />
               </button>
             </div>
             <div class="relative mt-10">
@@ -66,8 +66,8 @@
             </div>
             <div class="flex flex-col font-bold">
               <button class="bg-green-700 w-64 text-xl py-4 flex items-center justify-center mb-4 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" type="">Save changes</button>
-              <button  onClick={()=> setShowExit(true)} class="bg-gray-200 w-64 text-xl py-2 flex items-center justify-center mb-4 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-200 duration-300" type="">
-                  <img class="w-5 mr-2" src={logout} alt="logout" />
+              <button class="bg-gray-200 w-64 text-xl py-2 flex items-center justify-center mb-4 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-200 duration-300" type="">
+                  <img class="w-5 mr-2" src='/assets/img/logout.svg' alt="logout" />
                   <div class="py-2 text-red-600  cursor-pointer">Log out</div>
               </button>
               
@@ -103,7 +103,7 @@
               <div class="mb-10">
                   <label class="text-xl font-bold">Email</label>
                   <div class="flex items-center grow bg-blur rounded-lg px-3 mt-2">
-                      <img class="w-5 h-5 fill-white" src={LogIcon} alt=""/>
+                      <i class="far fa-envelope text-xl"></i>
                       <input
                       type="email"
                       class="form-control w-full block w-full px-4 py-4 text-md font-normal text-white bg-transparent m-0 "
@@ -117,7 +117,7 @@
               <div class="mb-10">
                   <label class="text-xl font-bold">Change Password</label>
                   <div class="flex items-center bg-blur rounded-lg px-3 mt-5">
-                      <img class="flex w-5 h-5 fill-white-0" src={lockIcon} alt=""/>
+                      <i class="fas fa-lock text-xl"></i>
                       <input
                       type="password"
                       class="flex form-control w-full px-4 py-5 text-md font-normal text-white bg-transparent m-0 "
@@ -127,7 +127,7 @@
                       />
                   </div>
                   <div class="flex items-center bg-blur rounded-lg px-3 mt-5">
-                      <img class="flex w-5 h-5 fill-white-0" src={lockIcon} alt=""/>
+                      <i class="fas fa-lock text-xl"></i>
                       <input
                       type="password"
                       class="flex form-control w-full px-4 py-5 text-md font-normal text-white bg-transparent m-0 "
@@ -137,7 +137,7 @@
                       />
                   </div>
                   <div class="flex items-center bg-blur rounded-lg px-3 mt-5">
-                      <img class="flex w-5 h-5 fill-white-0" src={lockIcon} alt=""/>
+                      <i class="fas fa-lock text-xl"></i>
                       <input
                       type="password"
                       class="flex form-control w-full px-4 py-5 text-md font-normal text-white bg-transparent m-0 "
@@ -149,7 +149,7 @@
               </div>
           </div>
         </div>
-        <LogOut onClose={handleExit} visible={showExit} />
+        <!-- <LogOut onClose={handleExit} visible={showExit} /> -->
       </div>
 </body>
 </html>
